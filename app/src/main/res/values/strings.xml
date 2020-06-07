@@ -14,7 +14,9 @@
     <string name="city">city</string>
     <string name="date">date</string>
     <string name="desc">desc</string>
-
+    <string name="pno">Phone Number</string>
+    <string name="password">Password</string>
+    <string name="time">Time</string>
     <string-array name="locate">
         <item>Pune</item>
         <item>Mumbai</item>
