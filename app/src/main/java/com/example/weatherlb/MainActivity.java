@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                         Log.d("hey", "DocumentSnapshot data: " + document.getData());
                         if(pass.getText().toString().equals(document.getData().get("Password"))){
                             Log.d("","pass matched");
-                            Intent mainIntent = new Intent(MainActivity.this,DisplayLB.class);
+                            Intent mainIntent = new Intent(MainActivity.this,Locations.class);
                             startActivity(mainIntent);
                         }else {
                             Log.e("","failed");

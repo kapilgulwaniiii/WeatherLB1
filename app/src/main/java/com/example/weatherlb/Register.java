@@ -31,7 +31,7 @@ public class Register extends AppCompatActivity {
     }
 
     public void main(View view) {
-        TextView phonenumber, pass;
+        final TextView phonenumber, pass;
         phonenumber = (TextView) findViewById(R.id.pno);
         pass = (TextView) findViewById(R.id.password);
 
@@ -61,8 +61,13 @@ public class Register extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Void aVoid) {
                                     Log.d("Yes", "DocumentSnapshot successfully written!");
-                                    Intent mainIntent = new Intent(Register.this, DisplayLB.class);
-                                    startActivity(mainIntent);
+                                    if (phonenumber.getText().toString().equals(null) && pass.getText().toString().equals(null)) {
+                                        Toast.makeText(Register.this, "Please Enter Credentials", Toast.LENGTH_SHORT).show();
+                                        Log.e("Hey","");
+                                    } else {
+                                        Intent mainIntent = new Intent(Register.this, Locations.class);
+                                        startActivity(mainIntent);
+                                    }
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {

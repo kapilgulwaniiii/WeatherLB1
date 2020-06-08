@@ -36,12 +36,12 @@ public class DisplayLB extends AppCompatActivity {
         t2 = findViewById(R.id.tcity);
         t3 = findViewById(R.id.tdesc);
         t4 = findViewById(R.id.tdate);
-        img=findViewById(R.id.imgicon);
+
 
 
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url ="https://api.openweathermap.org/data/2.5/weather?q=pune,india&appid=240c162dbe599cc9bc44041e5c74ea32";
+        String url ="https://api.openweathermap.org/data/2.5/weather?q=" + Temp.selected +"&appid=240c162dbe599cc9bc44041e5c74ea32";
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
@@ -70,6 +70,7 @@ public class DisplayLB extends AppCompatActivity {
                             String str_temp = json_main.getString("temp");
 
                             t3.setText(json_weather.getString("main"));
+                            t2.setText(Temp.selected+"|");
 
                             Calendar calendar= Calendar.getInstance();
                             SimpleDateFormat sdf= new SimpleDateFormat("dd-MM-YYYY\nhh:mm:ss a");

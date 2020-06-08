@@ -4,30 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Register">
+    tools:context=".Register"
+    android:background="@drawable/values">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/button4"
-            android:layout_width="122dp"
+            android:id="@+id/button5"
+            android:layout_width="125dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="200dp"
+            android:layout_marginStart="140dp"
             android:layout_marginBottom="196dp"
             android:onClick="main"
             android:text="@string/Signup"
+            android:background="@color/colorButton"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
+
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="117dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="188dp"
-            android:text="@string/LoginPage"
+            android:layout_width="300dp"
+            android:layout_height="155dp"
+            android:layout_marginTop="236dp"
+            android:fontFamily="Droid Sans Mono"
+            android:text="@string/hello"
+            android:textSize="35dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.241"
+            app:layout_constraintHorizontal_bias="0.981"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,8 +40,8 @@
             android:id="@+id/password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="56dp"
-            android:layout_marginTop="384dp"
+            android:layout_marginStart="84dp"
+            android:layout_marginTop="480dp"
             android:ems="10"
             android:hint="@string/password"
             android:inputType="textPassword"
@@ -47,8 +52,8 @@
             android:id="@+id/pno"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="56dp"
-            android:layout_marginTop="324dp"
+            android:layout_marginStart="84dp"
+            android:layout_marginTop="400dp"
             android:ems="10"
             android:hint="@string/pno"
             android:inputType="phone"
