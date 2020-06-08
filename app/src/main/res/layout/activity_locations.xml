@@ -66,31 +66,31 @@
 
     <TextView
         android:id="@+id/fav1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="112dp"
-        android:textSize="15dp"
+        android:layout_width="96dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="80dp"
+        android:textSize="22dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/fav2"
-        android:layout_width="0dp"
-        android:layout_height="19dp"
-        android:textSize="15dp"
-        android:layout_marginTop="92dp"
-        android:layout_marginEnd="112dp"
+        android:layout_width="96dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="172dp"
+        android:layout_marginEnd="80dp"
+        android:textSize="22dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/fav3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15dp"
-        android:layout_marginTop="144dp"
-        android:layout_marginEnd="112dp"
+        android:layout_width="95dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="116dp"
+        android:layout_marginEnd="80dp"
+        android:textSize="22dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
