@@ -16,5 +16,6 @@ The applicaiton stores the credentials on firestore that gives real-time access 
 
 API used:
 openweathermap api is used to get fields like temprature,city name and description of climate.
+And JSON parser is used to parse and display the fields on the UI.
 
 
