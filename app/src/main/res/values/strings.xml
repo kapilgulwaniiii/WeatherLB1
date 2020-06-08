@@ -7,7 +7,7 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="LoginPage">Please sign in</string>
-    <string name="Sign_up">Sign Up</string>
+    <string name="Sign_up">New user? Sign Up!</string>
     <string name="Sign_in">Sign In</string>
     <string name="Welcome">Weather LB</string>
     <string name="temp">temp</string>

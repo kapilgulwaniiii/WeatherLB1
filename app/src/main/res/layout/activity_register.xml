@@ -17,7 +17,8 @@
             android:layout_marginBottom="196dp"
             android:text="@string/Sign_up"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            android:onClick="main"/>
 
         <TextView
             android:id="@+id/textView2"

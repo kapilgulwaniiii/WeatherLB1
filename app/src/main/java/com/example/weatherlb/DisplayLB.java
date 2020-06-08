@@ -1,6 +1,7 @@
 package com.example.weatherlb;
 
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +22,7 @@ import java.util.Calendar;
 
 public class DisplayLB extends AppCompatActivity {
     TextView t1, t2, t3, t4,t5;
+    ImageView img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,8 @@ public class DisplayLB extends AppCompatActivity {
         t2 = findViewById(R.id.tcity);
         t3 = findViewById(R.id.tdesc);
         t4 = findViewById(R.id.tdate);
+        img=findViewById(R.id.imgicon);
+
 
         RequestQueue queue = Volley.newRequestQueue(this);
         String url ="https://api.openweathermap.org/data/2.5/weather?q=pune,india&appid=240c162dbe599cc9bc44041e5c74ea32";
@@ -44,11 +48,16 @@ public class DisplayLB extends AppCompatActivity {
                             JSONObject json = new JSONObject(response);
                             JSONArray weather_array = json.getJSONArray("weather");
                             JSONObject json_weather = weather_array.getJSONObject(0);
-                            //String str_main =json_weather.getJSONArray("main");
+
+//                            JSONObject json_icon = json.getJSONObject("icon");
+////                            String icon = json_icon.getString("icon");
+////                            String iconUrl = "http://openweathermp.org/img/w/" + icon + ".png";
+////
+////                            Picasso.get().load(iconUrl).into(img);
+
                             JSONObject json_main = json.getJSONObject("main");
                             String str_temp = json_main.getString("temp");
-                            //String str_name = json_main.getString("name");
-                            //t2.setText("Response is: " + str_name);
+
                             t3.setText(json_weather.getString("main"));
 
                             Calendar calendar= Calendar.getInstance();

@@ -10,31 +10,20 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="122dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="52dp"
-            android:layout_marginBottom="196dp"
-            android:text="@string/Sign_up"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-87dp">
 
         <Button
             android:id="@+id/button5"
             android:layout_width="125dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="56dp"
+            android:layout_marginStart="108dp"
             android:layout_marginBottom="196dp"
+            android:onClick="login"
             android:text="@string/Sign_in"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/button4"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            android:onClick="login"
-            />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/textView2"
@@ -71,21 +60,28 @@
             android:inputType="phone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="93dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="91dp"
-        android:layout_marginEnd="275dp"
-        android:layout_marginBottom="584dp"
-        android:text="@string/Welcome"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textColor="#ffffff"/>
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="93dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="88dp"
+            android:text="@string/Welcome"
+            android:textColor="#ffffff"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tsign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="120dp"
+            android:layout_marginBottom="132dp"
+            android:text="@string/Sign_up"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:onClick="register"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
