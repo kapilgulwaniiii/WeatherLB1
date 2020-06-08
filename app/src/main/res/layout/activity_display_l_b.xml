@@ -23,20 +23,18 @@
         android:layout_width="176dp"
         android:layout_height="85dp"
         android:layout_marginTop="500dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="4dp"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tcity"
-        android:layout_width="116dp"
-        android:layout_height="72dp"
-        android:layout_marginStart="72dp"
+        android:layout_width="157dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="500dp"
         android:textSize="30sp"
-        app:layout_constraintEnd_toStartOf="@+id/tdesc"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

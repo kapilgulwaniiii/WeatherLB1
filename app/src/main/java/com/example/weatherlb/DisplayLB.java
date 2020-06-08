@@ -70,7 +70,7 @@ public class DisplayLB extends AppCompatActivity {
                             String str_temp = json_main.getString("temp");
 
                             t3.setText(json_weather.getString("main"));
-                            t2.setText(Temp.selected+"|");
+                            t2.setText(Temp.selected);
 
                             Calendar calendar= Calendar.getInstance();
                             SimpleDateFormat sdf= new SimpleDateFormat("dd-MM-YYYY\nhh:mm:ss a");
