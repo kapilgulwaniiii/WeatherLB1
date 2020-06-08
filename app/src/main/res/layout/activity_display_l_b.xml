@@ -12,31 +12,31 @@
         android:id="@+id/ttemp"
         android:layout_width="222dp"
         android:layout_height="99dp"
-        android:layout_marginTop="332dp"
+        android:layout_marginTop="280dp"
         android:text="@string/temp"
         android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.746"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.851"
+        app:layout_constraintStart_toEndOf="@+id/imgicon"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tdesc"
         android:layout_width="176dp"
         android:layout_height="85dp"
-        android:layout_marginTop="452dp"
-        android:layout_marginEnd="108dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="16dp"
         android:text="@string/desc"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/ttemp" />
 
     <ImageView
         android:id="@+id/imgicon"
         android:layout_width="77dp"
         android:layout_height="76dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="356dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="292dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/weather" />
@@ -45,21 +45,21 @@
         android:id="@+id/tcity"
         android:layout_width="82dp"
         android:layout_height="52dp"
-        android:layout_marginTop="468dp"
-        android:layout_marginEnd="360dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="100dp"
         android:text="@string/city"
         android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgicon" />
 
     <TextView
         android:id="@+id/tdate"
         android:layout_width="147dp"
         android:layout_height="69dp"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="664dp"
         android:text="@string/date"
-        android:textSize="20sp"
+        android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -67,13 +67,12 @@
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="464dp"
-        android:layout_marginBottom="704dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="44dp"
         android:clickable="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/star"
         android:onClick="floating"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/star" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
