@@ -18,8 +18,8 @@
     <string name="pno">Phone Number</string>
     <string name="password">Password</string>
     <string name="time">Time</string>
-    <string name="Cities">All Cities</string>
-    <string name="Fav">Favourites</string>
+    <string name="Cities">All Cities:</string>
+    <string name="Fav">Favourites:</string>
     <string name= "buttons">Lets go</string>
     <string name= "add">Add to Favourites</string>
     <string name= "hello">   Hello! \nNew user</string>
