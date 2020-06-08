@@ -36,32 +36,37 @@ public class MainActivity extends AppCompatActivity {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         phone = (TextView) findViewById(R.id.pno);
         pass = (TextView) findViewById(R.id.password);
+        if(phone.getText().toString().equals("")&&pass.getText().toString().equals(""))
+        {
+            Toast.makeText(MainActivity.this, "Please Enter Credentials", Toast.LENGTH_SHORT).show();
 
-        DocumentReference docRef = db.collection("user").document(phone.getText().toString());
-        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                if (task.isSuccessful()) {
-                    DocumentSnapshot document = task.getResult();
-                    if (document.exists()) {
-                        Log.d("hey", "DocumentSnapshot data: " + document.getData());
-                        if(pass.getText().toString().equals(document.getData().get("Password"))){
-                            Log.d("","pass matched");
-                            Intent mainIntent = new Intent(MainActivity.this,Locations.class);
-                            startActivity(mainIntent);
-                        }else {
-                            Log.e("","failed");
-                            Toast.makeText(MainActivity.this, "Wrong Credentials", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            DocumentReference docRef = db.collection("user").document(phone.getText().toString());
+            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if (task.isSuccessful()) {
+                        DocumentSnapshot document = task.getResult();
+                        if (document.exists()) {
+                            Log.d("hey", "DocumentSnapshot data: " + document.getData());
+                            if (pass.getText().toString().equals(document.getData().get("Password"))) {
+                                Log.d("", "pass matched");
+                                Intent mainIntent = new Intent(MainActivity.this, Locations.class);
+                                startActivity(mainIntent);
+                            } else {
+                                Log.e("", "failed");
+                                Toast.makeText(MainActivity.this, "Wrong Credentials", Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            Log.d("Error", "No such document");
                         }
                     } else {
-                        Log.d("Error", "No such document");
+                        Log.d("MajorError", "get failed with ", task.getException());
                     }
-                } else {
-                    Log.d("MajorError", "get failed with ", task.getException());
                 }
-            }
-        });
-
+            });
+        }
     }
 
     public void register(View view) {

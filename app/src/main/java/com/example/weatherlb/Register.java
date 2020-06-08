@@ -37,49 +37,54 @@ public class Register extends AppCompatActivity {
 
         final String ph = phonenumber.getText().toString();
         String password = pass.getText().toString();
+        if(phonenumber.getText().toString().equals("")&&pass.getText().toString().equals(""))
+        {
+            Toast.makeText(Register.this, "Please Enter Credentials", Toast.LENGTH_SHORT).show();
+
+        }
+        else {
+
+            final FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+            final Map<String, Object> user = new HashMap<>();
+            user.put("Password", password);
+
+            DocumentReference docRef = db.collection("user").document(ph);
+            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if (task.isSuccessful()) {
+                        DocumentSnapshot document = task.getResult();
+                        if (document.exists()) {
+                            Log.e("Already exists", "DocumentSnapshot data: " + document.getData());
+                            Toast.makeText(Register.this, "User already exists", Toast.LENGTH_SHORT).show();
+
+                        } else {
+                            db.collection("user").document(ph)
+                                    .set(user)
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            Log.d("Yes", "DocumentSnapshot successfully written!");
+                                            String phnno = phonenumber.getText().toString();
+                                            Log.e("hellolelelel", phnno);
+
+                                            Intent mainIntent = new Intent(Register.this, Locations.class);
+                                                startActivity(mainIntent);
 
 
-        final FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-        final Map<String, Object> user = new HashMap<>();
-        user.put("Password", password);
-
-        DocumentReference docRef = db.collection("user").document(ph);
-        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-        @Override
-        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-            if (task.isSuccessful()) {
-                DocumentSnapshot document = task.getResult();
-                if (document.exists()) {
-                    Log.e("Already exists", "DocumentSnapshot data: " + document.getData());
-                    Toast.makeText(Register.this, "User already exists", Toast.LENGTH_SHORT).show();
-
-                } else {
-                    db.collection("user").document(ph)
-                            .set(user)
-                            .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void aVoid) {
-                                    Log.d("Yes", "DocumentSnapshot successfully written!");
-                                    if (phonenumber.getText().toString().equals(null) && pass.getText().toString().equals(null)) {
-                                        Toast.makeText(Register.this, "Please Enter Credentials", Toast.LENGTH_SHORT).show();
-                                        Log.e("Hey","");
-                                    } else {
-                                        Intent mainIntent = new Intent(Register.this, Locations.class);
-                                        startActivity(mainIntent);
-                                    }
-                                }
-                            })
-                            .addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Log.w("fail", "Error writing document", e);
-                                }
-                            });
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.w("fail", "Error writing document", e);
+                                        }
+                                    });
+                        }
+                    }
                 }
-            }
-            }
-        });
-
+            });
+        }
     }
 }
