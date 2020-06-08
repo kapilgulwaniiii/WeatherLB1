@@ -32,7 +32,6 @@ public class DisplayLB extends AppCompatActivity {
         t2 = findViewById(R.id.tcity);
         t3 = findViewById(R.id.tdesc);
         t4 = findViewById(R.id.tdate);
-        t5 = findViewById(R.id.ttime);
 
         RequestQueue queue = Volley.newRequestQueue(this);
         String url ="https://api.openweathermap.org/data/2.5/weather?q=pune,india&appid=240c162dbe599cc9bc44041e5c74ea32";
@@ -49,15 +48,19 @@ public class DisplayLB extends AppCompatActivity {
                             JSONObject json_main = json.getJSONObject("main");
                             String str_temp = json_main.getString("temp");
                             //String str_name = json_main.getString("name");
-                            t1.setText("Temprature: " + str_temp);
                             //t2.setText("Response is: " + str_name);
-                            t3.setText("Weather: " + json_weather.getString("main"));
+                            t3.setText(json_weather.getString("main"));
 
                             Calendar calendar= Calendar.getInstance();
-                            SimpleDateFormat sdf= new SimpleDateFormat("dd-MM-YYYY\nhh mm ss a");
+                            SimpleDateFormat sdf= new SimpleDateFormat("dd-MM-YYYY\nhh:mm:ss a");
                             String datenow =sdf.format(calendar.getTime());
                             t4.setText(datenow);
 
+                            double tint= Double.parseDouble(str_temp);
+                            double centi= (tint-273);
+                            centi= Math.round(centi);
+                            int i= (int)centi;
+                            t1.setText((String.valueOf(i)) + " °C");
 
                         }catch(Exception e){
                         }

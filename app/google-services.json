@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "810102186593",
+    "firebase_url": "https://weatherlb.firebaseio.com",
+    "project_id": "weatherlb",
+    "storage_bucket": "weatherlb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810102186593:android:fca29b8e9f6ad204350020",
+        "android_client_info": {
+          "package_name": "com.example.weatherlb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "810102186593-vea71fi4ad1hsmsrvvuq7f8aqdsm0jhn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuTjzrpBBUddWt0PnflVclqs82qjcQtXA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "810102186593-vea71fi4ad1hsmsrvvuq7f8aqdsm0jhn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

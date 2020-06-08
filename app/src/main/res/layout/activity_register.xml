@@ -2,12 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@color/colorPrimary">
-
+    tools:context=".Register">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -16,35 +13,20 @@
             android:id="@+id/button4"
             android:layout_width="122dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="52dp"
+            android:layout_marginEnd="200dp"
             android:layout_marginBottom="196dp"
             android:text="@string/Sign_up"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="125dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="56dp"
-            android:layout_marginBottom="196dp"
-            android:text="@string/Sign_in"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/button4"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            android:onClick="login"
-            />
-
         <TextView
             android:id="@+id/textView2"
             android:layout_width="117dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="188dp"
             android:text="@string/LoginPage"
-            android:textColor="#ffffff"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.445"
+            app:layout_constraintHorizontal_bias="0.241"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -73,19 +55,5 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="93dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="91dp"
-        android:layout_marginEnd="275dp"
-        android:layout_marginBottom="584dp"
-        android:text="@string/Welcome"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textColor="#ffffff"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
