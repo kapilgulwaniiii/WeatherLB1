@@ -5,12 +5,17 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -30,31 +35,46 @@ public class Register extends AppCompatActivity {
         phonenumber = (TextView) findViewById(R.id.pno);
         pass = (TextView) findViewById(R.id.password);
 
-        String ph = phonenumber.getText().toString();
+        final String ph = phonenumber.getText().toString();
         String password = pass.getText().toString();
 
 
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        final FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        Map<String, Object> user = new HashMap<>();
+        final Map<String, Object> user = new HashMap<>();
         user.put("Password", password);
 
+        DocumentReference docRef = db.collection("user").document(ph);
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+        @Override
+        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+            if (task.isSuccessful()) {
+                DocumentSnapshot document = task.getResult();
+                if (document.exists()) {
+                    Log.e("Already exists", "DocumentSnapshot data: " + document.getData());
+                    Toast.makeText(Register.this, "User already exists", Toast.LENGTH_SHORT).show();
 
-        db.collection("user").document(ph)
-                .set(user)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Log.d("Yes", "DocumentSnapshot successfully written!");
-                        Intent mainIntent = new Intent(Register.this,DisplayLB.class);
-                        startActivity(mainIntent);
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w("fail", "Error writing document", e);
-                    }
-                });
+                } else {
+                    db.collection("user").document(ph)
+                            .set(user)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d("Yes", "DocumentSnapshot successfully written!");
+                                    Intent mainIntent = new Intent(Register.this, DisplayLB.class);
+                                    startActivity(mainIntent);
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.w("fail", "Error writing document", e);
+                                }
+                            });
+                }
+            }
+            }
+        });
+
     }
 }

@@ -9,34 +9,44 @@
 
 
     <TextView
+        android:id="@+id/ttemp"
+        android:layout_width="222dp"
+        android:layout_height="99dp"
+        android:layout_marginTop="332dp"
+        android:text="@string/temp"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.746"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/tdesc"
-        android:layout_width="86dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="352dp"
-        android:layout_marginEnd="160dp"
+        android:layout_width="176dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="452dp"
+        android:layout_marginEnd="108dp"
         android:text="@string/desc"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/ttemp"
-        android:layout_width="222dp"
-        android:layout_height="99dp"
-        android:layout_marginTop="236dp"
-        android:text="@string/temp"
-        android:textSize="60sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.788"
+    <ImageView
+        android:id="@+id/imgicon"
+        android:layout_width="77dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="356dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/weather" />
 
     <TextView
         android:id="@+id/tcity"
         android:layout_width="82dp"
         android:layout_height="52dp"
-        android:layout_marginTop="352dp"
-        android:layout_marginEnd="268dp"
+        android:layout_marginTop="468dp"
+        android:layout_marginEnd="360dp"
         android:text="@string/city"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,19 +56,24 @@
         android:id="@+id/tdate"
         android:layout_width="147dp"
         android:layout_height="69dp"
-        android:layout_marginStart="224dp"
-        android:layout_marginTop="592dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="664dp"
         android:text="@string/date"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imgicon"
-        android:layout_width="77dp"
-        android:layout_height="76dp"
-        app:srcCompat="@drawable/weather"
-        tools:layout_editor_absoluteX="44dp"
-        tools:layout_editor_absoluteY="249dp" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="464dp"
+        android:layout_marginBottom="704dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/star"
+        android:onClick="floating"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WeatherLB</string>
+    <string name="app_name">Weather Forecast</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -8,6 +8,7 @@
     <string name="previous">Previous</string>
     <string name="LoginPage">Please sign in</string>
     <string name="Sign_up">New user? Sign Up!</string>
+    <string name="Signup">I\'m ready!</string>
     <string name="Sign_in">Sign In</string>
     <string name="Welcome">Weather LB</string>
     <string name="temp">temp</string>

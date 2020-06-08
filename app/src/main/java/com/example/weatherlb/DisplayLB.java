@@ -1,6 +1,8 @@
 package com.example.weatherlb;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -37,6 +39,7 @@ public class DisplayLB extends AppCompatActivity {
         img=findViewById(R.id.imgicon);
 
 
+
         RequestQueue queue = Volley.newRequestQueue(this);
         String url ="https://api.openweathermap.org/data/2.5/weather?q=pune,india&appid=240c162dbe599cc9bc44041e5c74ea32";
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
@@ -47,11 +50,19 @@ public class DisplayLB extends AppCompatActivity {
 
                             JSONObject json = new JSONObject(response);
                             JSONArray weather_array = json.getJSONArray("weather");
-                            JSONObject json_weather = weather_array.getJSONObject(0);
 
+                            JSONObject json_weather = weather_array.getJSONObject(0);
 //                            JSONObject json_icon = json.getJSONObject("icon");
+//                            Log.e("hi","hi");
+//                            String icon = json_icon.getString("icon");
+//                            String imageUri = "http://openweathermp.org/img/w/" + icon + ".png";
+//                            Log.e("Image",imageUri);
+//                            ImageView img = (ImageView) findViewById(R.id.imgicon);
+//                            Picasso.get().load(imageUri).into(img);
+//
+////                            JSONObject json_icon = json.getJSONObject("icon");
 ////                            String icon = json_icon.getString("icon");
-////                            String iconUrl = "http://openweathermp.org/img/w/" + icon + ".png";
+////                            String iconUrl = "http://openweathermp.org/img/w/" + json_icon + ".png";
 ////
 ////                            Picasso.get().load(iconUrl).into(img);
 
@@ -81,5 +92,10 @@ public class DisplayLB extends AppCompatActivity {
             }
         });
         queue.add(stringRequest);
+    }
+
+    public void floating(View view) {
+        Intent mainIntent = new Intent(DisplayLB.this,Locations.class);
+        startActivity(mainIntent);
     }
 }
